@@ -1,0 +1,23 @@
+.header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    min-height: 3.5rem;
+    border-bottom: 1px solid rgba(34,36,38,.15);
+    padding-left: 14%;
+    padding-right: 14%;
+    color: #1D4ED8;
+    font-weight: 600;
+}
+
+.header__home {
+    width: 22%;
+}
+.header__icon {
+    width: 22%;
+    text-align: center;
+}
+.header__search {
+    width: 22%;
+    text-align: end;
+}

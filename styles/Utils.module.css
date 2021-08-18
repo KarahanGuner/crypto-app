@@ -1,0 +1,18 @@
+.text-align-start {
+    text-align: start;
+}
+
+.text-align-center {
+    text-align: center;
+}
+
+.gray-text {
+    color: rgb(130, 140, 160);
+}
+
+.green-text {
+    color: rgb(30, 200, 130);
+}
+.red-text {
+    color: rgb(235, 60, 70);
+}

@@ -1,0 +1,36 @@
+.coins-table {
+    background-color: white;
+    width: 72%;
+    padding: 1rem;
+    border-radius: 0.3rem;
+    box-shadow: rgb(0 0 0 / 45%) 0px 2px 15px -3px !important;
+    border-spacing: 0px;
+}
+
+.coins-table thead th {
+    border-bottom: 1px solid rgba(128, 128, 128, 0.4);
+    padding-bottom: 0.6rem;
+}
+
+.coins-table td {
+    height: 3rem;
+    border-bottom: 1px solid rgba(128, 128, 128, 0.2);
+}
+
+.coins-table tr {
+    text-align: end;
+}
+
+.coins-table tbody tr:hover {
+    background-color: rgb(240,240,240);;
+}
+
+.table__name-row {
+    display: flex;
+    align-items: center;
+}
+
+.table__coin-icon {
+    width: 1.6rem;
+    height: 1.6rem;
+}
