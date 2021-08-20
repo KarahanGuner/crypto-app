@@ -1,0 +1,16 @@
+.footer {
+    background-color: #303030;
+    color: white;
+    padding-top: 1rem;
+    padding-bottom: 1rem;
+
+}
+
+.footer a {
+    color: #58a6ff;
+}
+
+.footer div {
+    text-align: center;
+    line-height: 2rem;
+}

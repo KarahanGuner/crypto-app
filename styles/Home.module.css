@@ -20,5 +20,17 @@
   justify-content: center;
   padding-top: 1rem;
   background-color: rgb(236, 240, 240);
+  padding-bottom: 2rem;
 }
 
+@media (max-width: 760px) {
+  .marketstats {
+    font-size: 1rem;
+    width: 98%;
+    min-height: 4rem;
+  }
+  .table-container {
+    padding-top: 0.3rem;
+  }
+  
+}

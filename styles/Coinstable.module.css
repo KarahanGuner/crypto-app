@@ -25,12 +25,38 @@
     background-color: rgb(240,240,240);;
 }
 
+.coins-table__rank {
+    text-align: center;
+}
+
+
 .table__name-row {
-    display: flex;
-    align-items: center;
+    display: flex !important;
+    align-items: center !important;
 }
 
 .table__coin-icon {
     width: 1.6rem;
     height: 1.6rem;
+}
+
+
+@media (max-width: 760px) {
+    .coins-table {
+        width: 98%;
+        font-size: 12px;
+    }
+    .coins-table__rank {
+        display: none;
+    }
+    .coins-table__marketcap {
+        display: none;
+    }
+    .coins-table__7d {
+        display: none;
+    }
+    .coins-table__supply {
+        display: none;
+    }
+    
 }

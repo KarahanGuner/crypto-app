@@ -14,10 +14,10 @@ const CoinsTable: React.FC<IProps> = ({data}) => {
         return data.map(function(coin, index) {
             return (
                 <tr key={index} >
-                    <td className={utils["text-align-center"]}>{coin.market_cap_rank}</td>
+                    <td className={styles["coins-table__rank"]}>{coin.market_cap_rank}</td>
                     <td className={utils["text-align-start"]}>
                         <div className={styles["table__name-row"]}>
-                            <img src={coin.image} alt={coin.name} className={styles["table__coin-icon"]}/> 
+                            <img src={coin.image.replace('large', 'small')} alt={coin.name} className={styles["table__coin-icon"]}/> 
                             &nbsp;
                             {coin.name}
                             &nbsp;  
@@ -29,16 +29,16 @@ const CoinsTable: React.FC<IProps> = ({data}) => {
                     <td>
                         {coin.current_price.toLocaleString('en-US', { style: 'currency', currency: 'USD', minimumFractionDigits: 2, maximumFractionDigits: 4 })}
                     </td>
-                    <td>
+                    <td className={styles["coins-table__marketcap"]}>
                         {coin.market_cap.toLocaleString('en-US', { style: 'currency', currency: 'USD', minimumFractionDigits: 0, maximumFractionDigits: 0})}
                     </td>
                     <td className={coin.price_change_percentage_24h_in_currency >= 0 ? utils["green-text"] : utils["red-text"]} >
                         {coin.price_change_percentage_24h_in_currency.toLocaleString('en-US', { maximumFractionDigits: 2 })}%
                     </td>
-                    <td className={coin.price_change_percentage_24h_in_currency >= 0 ? utils["green-text"] : utils["red-text"]} >
+                    <td className={coin.price_change_percentage_7d_in_currency >= 0 ?`${utils["green-text"]} ${styles["coins-table__7d"]}` : `${utils["red-text"]} ${styles["coins-table__7d"]}` } >
                         {coin.price_change_percentage_7d_in_currency.toLocaleString('en-US', { maximumFractionDigits: 2 })}%
                     </td>
-                    <td>
+                    <td className={styles["coins-table__supply"]}>
                         {coin.circulating_supply.toLocaleString('en-US', { minimumFractionDigits: 0, maximumFractionDigits: 0 })}
                     </td>
                 </tr>
@@ -50,13 +50,13 @@ const CoinsTable: React.FC<IProps> = ({data}) => {
         <table className={styles["coins-table"]}>
             <thead>
                 <tr>
-                    <th className={utils["text-align-center"]}>Rank</th>
+                    <th className={styles["coins-table__rank"]}>Rank</th>
                     <th className={utils["text-align-start"]}>Name</th>
                     <th>Price</th>
-                    <th>Market Cap</th>
+                    <th className={styles["coins-table__marketcap"]}>Market Cap</th>
                     <th>24h%</th>
-                    <th>7d%</th>
-                    <th>Circulating Supply</th>
+                    <th className={styles["coins-table__7d"]}>7d%</th>
+                    <th className={styles["coins-table__supply"]}>Circulating Supply</th>
                 </tr>
             </thead>
             <tbody>

@@ -12,12 +12,37 @@
 
 .header__home {
     width: 22%;
+
 }
 .header__icon {
     width: 22%;
     text-align: center;
+
 }
 .header__search {
     width: 22%;
     text-align: end;
+
 }
+
+@media (max-width: 760px) {
+    .header {
+        padding-left: 1%;
+        padding-right: 1%;
+    }
+    .header__home {
+        width: 20%;
+        order: 3;
+    }
+    .header__icon {
+        width: 20%;
+        text-align: center;
+        order: 2;
+    }
+    .header__search {
+        width: 60%;
+        text-align: end;
+        order: 1;
+    }
+    
+  }
