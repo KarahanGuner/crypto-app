@@ -16,14 +16,16 @@ const CoinsTable: React.FC<IProps> = ({data}) => {
                 <tr key={index} >
                     <td className={styles["coins-table__rank"]}>{coin.market_cap_rank}</td>
                     <td className={utils["text-align-start"]}>
-                        <div className={styles["table__name-row"]}>
-                            <img src={coin.image.replace('large', 'small')} alt={coin.name} className={styles["table__coin-icon"]}/> 
-                            &nbsp;
-                            {coin.name}
-                            &nbsp;  
-                            <span className={utils["gray-text"]}>
-                                {coin.symbol.toUpperCase()}
-                            </span>
+                        <div >
+                            <a href={`/coins/${coin.id}`} className={styles["table__name-row"]}>
+                                <img src={coin.image.replace('large', 'small')} alt={coin.name} className={styles["table__coin-icon"]}/> 
+                                &nbsp;
+                                {coin.name}
+                                &nbsp;  
+                                <span className={utils["gray-text"]}>
+                                    {coin.symbol.toUpperCase()}
+                                </span>
+                            </a>
                         </div>
                     </td>
                     <td>
