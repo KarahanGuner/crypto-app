@@ -5,21 +5,48 @@ import Head from 'next/head'
 import Image from 'next/image'
 import Header from '../../components/header.component';
 import Footer from '../../components/footer.component';
+import LineChart from '../../components/linechart.component';
 import styles from '../../styles/Coinpage.module.css'
 import utils from '../../styles/Utils.module.css';
 
 interface IProps {
-    info: {
-      [key: string]: any
-    }[];
-    prices: {
-      [key: string]: any
-    }
+  info: {
+    [key: string]: any
+  }[];
+  marketData: {
+    [key: string]: any
   }
+}
 
-const CoinPage: NextPage<IProps> = ({info, prices}) => {
+interface IMarketData {
+  prices: []
+}
+
+//turns market_chart data to a format chartjs can understand. also gets rid of market_caps and total_volumes
+const formatMarketData = (data: IMarketData) => {
+  return {
+    prices: data["prices"].map(el => {
+      return {
+        t: el[0],
+        y: el[1]
+      }
+    })
+  }
+}
+
+const CoinPage: NextPage<IProps> = ({info, marketData}) => {
+  const [prices, setPrices] = useState({
+    '1D': marketData.prices,
+    '1W': undefined,
+    '1M': undefined,
+    '3M': undefined,
+    '6M': undefined,
+    '1Y': undefined,
+    'ALL': undefined
+  });
+
     console.log(info)
-    console.log(prices)
+    console.log(marketData)
   return (
     <div >
       <Head>
@@ -29,7 +56,9 @@ const CoinPage: NextPage<IProps> = ({info, prices}) => {
       </Head>
       <Header/>
       <div className={styles["coin-container"]}>
-        <div className={styles["grid-item-1"]}></div>
+        <div className={styles["grid-item-1"]}>
+          <LineChart chartData={marketData.prices}/>
+        </div>
         <div className={styles["grid-item-2"]}></div>
         <div className={styles["grid-item-3"]}></div>
       </div>
@@ -43,7 +72,7 @@ export default CoinPage;
 export const getServerSideProps: GetServerSideProps = async (context) => {
   const data = await Promise.all([
     fetch(`https://api.coingecko.com/api/v3/coins/${context.params!.id}?localization=false`).then(res => res.json()),
-    fetch(`https://api.coingecko.com/api/v3/coins/${context.params!.id}/market_chart?vs_currency=usd&days=max`).then(res => res.json())
+    fetch(`https://api.coingecko.com/api/v3/coins/${context.params!.id}/market_chart?vs_currency=usd&days=1`).then(res => res.json())
   ])
 
   if (!data) {
@@ -51,8 +80,9 @@ export const getServerSideProps: GetServerSideProps = async (context) => {
       notFound: true,
     }
   }
+  
 
   return {
-    props: {info: data[0], prices: data[1]}
+    props: {info: data[0], marketData: formatMarketData(data[1])}
   }
 }
