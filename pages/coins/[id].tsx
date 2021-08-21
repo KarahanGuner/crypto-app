@@ -5,8 +5,8 @@ import Head from 'next/head'
 import Image from 'next/image'
 import Header from '../../components/header.component';
 import Footer from '../../components/footer.component';
-import styles from '../styles/Coinpage.module.css'
-import utils from '../styles/Utils.module.css';
+import styles from '../../styles/Coinpage.module.css'
+import utils from '../../styles/Utils.module.css';
 
 interface IProps {
     info: {
@@ -28,7 +28,11 @@ const CoinPage: NextPage<IProps> = ({info, prices}) => {
         <link rel="icon" href="/favicon.ico" />
       </Head>
       <Header/>
-
+      <div className={styles["coin-container"]}>
+        <div className={styles["grid-item-1"]}></div>
+        <div className={styles["grid-item-2"]}></div>
+        <div className={styles["grid-item-3"]}></div>
+      </div>
       <Footer/>
     </div>
   )
