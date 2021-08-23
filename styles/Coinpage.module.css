@@ -1,25 +1,52 @@
 .coin-container {
-    display: grid;
-    grid-template-columns: 1fr 6fr 2fr 1fr;
-    grid-template-rows: auto 1fr;
+  display: grid;
+  grid-template-columns: 1fr 13fr 5fr 1fr;
+  grid-template-rows: auto 1fr;
+  column-gap: 3rem;
+  margin-top: 1rem;
 }
 
 .grid-item-1 {
-    grid-column-start: 2;
-    grid-column-end: 3;
-    grid-row-start: 1;
-    grid-row-end: 2;
+  grid-column-start: 2;
+  grid-column-end: 3;
+  grid-row-start: 1;
+  grid-row-end: 2;
+}
+
+.timeinterval-buttons-container {
+  text-align: right;
+}
+
+.timeinterval-button {
+  color: #087afc;
+  border: none;
+  background-color: white;
+  font-weight: 600;
+  cursor: pointer;
+  border-radius: 5em;
+  padding: 0.5em 1em;
+}
+
+.chosen-timeinterval-button {
+  background-color: #087afc;
+  color: white;
+  border: none;
+  font-weight: 600;
+  cursor: pointer;
+  border-radius: 5em;
+  padding: 0.5em 1em;
 }
 
 .grid-item-2 {
-    grid-column-start: 3;
-    grid-column-end: 4;
-    grid-row-start: 1;
-    grid-row-end: 3;
+  grid-column-start: 3;
+  grid-column-end: 4;
+  grid-row-start: 1;
+  grid-row-end: 3;
+  background-color: black;
 }
 .grid-item-3 {
-    grid-column-start: 2;
-    grid-column-end: 3;
-    grid-row-start: 2;
-    grid-row-end: 3;
+  grid-column-start: 2;
+  grid-column-end: 3;
+  grid-row-start: 2;
+  grid-row-end: 3;
 }
