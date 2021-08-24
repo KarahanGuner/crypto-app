@@ -1,0 +1,29 @@
+.coin-info-tab-container {
+    padding-top: 0.3rem;
+    padding-left: 1rem;
+    padding-right: 1rem;
+    padding-bottom: 0.8rem;
+    border-radius: 0.3rem;
+    box-shadow: rgb(0 0 0 / 20%) 0px 2px 15px -3px !important;
+}
+
+.coin-info-tab-container table {
+    border-collapse: collapse;
+    width: 100%;
+}
+.coin-info-tab-container th {
+    text-align: left;
+    
+}
+.coin-info-tab-container td {
+    
+    text-align: right;
+    height: 3rem;
+    
+}
+.coin-info-tab-container tr {
+    border-bottom: 1px solid rgba(128, 128, 128, 0.2);
+}
+.coin-info-tab-container tr:last-child {
+    border-bottom: none;
+}

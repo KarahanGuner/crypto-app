@@ -3,7 +3,8 @@
   grid-template-columns: 1fr 13fr 5fr 1fr;
   grid-template-rows: auto 1fr;
   column-gap: 3rem;
-  margin-top: 1rem;
+  row-gap: 3rem;
+  margin-top: 1.5rem;
 }
 
 .grid-item-1 {
@@ -42,7 +43,6 @@
   grid-column-end: 4;
   grid-row-start: 1;
   grid-row-end: 3;
-  background-color: black;
 }
 .grid-item-3 {
   grid-column-start: 2;

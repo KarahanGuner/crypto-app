@@ -6,6 +6,7 @@ import Image from "next/image";
 import Header from "../../components/header.component";
 import Footer from "../../components/footer.component";
 import LineChart from "../../components/linechart.component";
+import CoinInfoTab from "../../components/coininfotab.component";
 import styles from "../../styles/Coinpage.module.css";
 import utils from "../../styles/Utils.module.css";
 
@@ -45,7 +46,7 @@ const CoinPage: NextPage<IProps> = ({ info, marketData }) => {
     "365": undefined,
     max: undefined,
   });
-
+  
   const handleChangeTimeInterval = async (interval: string) => {
     if (chosenTimeInterval == interval) {
       return;
@@ -159,10 +160,10 @@ const CoinPage: NextPage<IProps> = ({ info, marketData }) => {
               ALL
             </button>
           </div>
-          <LineChart chartData={marketData.prices} />
+          <LineChart chartData={prices[chosenTimeInterval]} />
         </div>
-        <div className={styles["grid-item-2"]}></div>
-        <div className={styles["grid-item-3"]}></div>
+        <div className={styles["grid-item-2"]}><CoinInfoTab info={info}/></div>
+        <div className={styles["grid-item-3"]}>LINKS GO HERE</div>
       </div>
       <Footer />
     </div>
