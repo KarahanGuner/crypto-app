@@ -39,13 +39,14 @@ const options : ChartOptions = {
   }
 
 const LineChart: React.FC<any> = ({chartData}) => {
+
     const data= {
         datasets: [
           {
             label: 'Price',
             data: chartData,
-            backgroundColor: "#6fb2ff70",
-            borderColor: "#58a6ff",
+            backgroundColor: chartData[0].y - chartData[chartData.length-1].y > 0 ? "rgb(235 60 70 / 25%)" : "rgb(30 200 130 / 25%)",
+            borderColor: chartData[0].y - chartData[chartData.length-1].y > 0 ? "rgb(235, 60, 70)" : "rgb(30, 200, 130)",
             pointRadius: 0,
             fill: true
           },

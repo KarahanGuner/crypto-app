@@ -1,0 +1,17 @@
+.links-tab-container {
+    display: flex;
+    align-items: center;
+    border-radius: 0.3rem;
+    padding: 1rem;
+    min-height: 100%;
+}
+
+.links-tab__icon {
+    width: 3rem;
+    height: 3rem;
+}
+
+.links-tab-container a{
+    color: #087afc;
+    margin-left: 1rem;
+}
