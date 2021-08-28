@@ -1,15 +1,49 @@
 .footer {
   background-color: #303030;
   color: white;
-  padding-top: 1rem;
-  padding-bottom: 1rem;
+  padding: 1rem 0%;
 }
 
 .footer a {
   color: #58a6ff;
 }
 
+.footer__links-container {
+  display: flex;
+  justify-content: center;
+}
+.footer__links-container div{
+  margin-right: 30px;
+}
+
+.footer__links-container img{
+  height: 25px;
+  width: auto;
+}
+
 .footer div {
-  text-align: center;
   line-height: 2rem;
+}
+
+.footer__coingecko-container {
+  display: flex;
+  justify-content: center;
+}
+
+@media (max-width: 760px) {
+  .footer {
+    padding: 0.5rem 0%;
+    font-size: 0.9rem;
+  }
+  .footer__links-container {
+    display: block;
+    text-align: center;
+  }
+  .footer div {
+    line-height: 1.5rem;
+  }
+  .footer__links-container div{
+    margin-right: 0px;
+  }
+  
 }

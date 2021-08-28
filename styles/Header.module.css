@@ -23,6 +23,7 @@
 .header__icon-container img{
     height: 25px;
     width: 120.11px;
+    margin-top: 4px;
 }
 
 .header__search {
@@ -36,14 +37,16 @@
         padding-right: 5%;
     }
     .header__home {
-        width: 20%;
-        order: 1;
-    }
-    .header__icon-container {
+        
         display: none;
     }
+    .header__icon-container {
+        width: 20%;
+        order: 1;
+        
+    }
     .header__search {
-        width: 67%;
+        width: 52%;
         order: 2;
     }
     
