@@ -1,5 +1,4 @@
 import React, { useState, useEffect, useRef } from 'react'
-import Link from 'next/link'
 import styles from '../styles/Searchfilter.module.css';
 import utils from '../styles/Utils.module.css';
 import coins from '../public/data/coins'
@@ -30,15 +29,17 @@ const SearchFilter: React.FC = () => {
             {searchTerm ?
                 <div className={styles["results"]}>
                     {coins.filter(entry => entry.name.toLowerCase().includes(searchTerm.toLowerCase())).map((coin, index) => (
-                        <div key={index}>
-                            <img src={`https://assets.coingecko.com/coins/images${coin.image}`} alt={coin.name} className={styles["results__coin-icon"]}/> 
-                            &nbsp;
-                            {coin.name}
-                            &nbsp;  
-                            <span className={utils["gray-text"]}>
-                                {coin.symbol.toUpperCase()}
-                            </span>
-                        </div>
+                        <a href={`/coins/${coin.id}`}>
+                            <div key={index}>
+                                <img src={`https://assets.coingecko.com/coins/images${coin.image}`} alt={coin.name} className={styles["results__coin-icon"]}/> 
+                                &nbsp;
+                                {coin.name}
+                                &nbsp;  
+                                <span className={utils["gray-text"]}>
+                                    {coin.symbol.toUpperCase()}
+                                </span>
+                            </div>
+                        </a>
                     ))}
                 </div> :
                 null}

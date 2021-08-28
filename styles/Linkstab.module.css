@@ -4,6 +4,7 @@
     border-radius: 0.3rem;
     padding: 1rem;
     min-height: 100%;
+    flex-wrap: wrap;
 }
 
 .links-tab__icon {
@@ -15,3 +16,14 @@
     color: #087afc;
     margin-left: 1rem;
 }
+
+@media (max-width: 600px) {
+    .links-tab-container {
+
+        padding: 0.5rem;
+
+    }
+    .high-width-only {
+        display: none;
+    }
+  }

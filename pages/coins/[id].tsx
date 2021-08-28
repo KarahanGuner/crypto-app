@@ -69,17 +69,24 @@ const CoinPage: NextPage<IProps> = ({ info, marketData }) => {
     <div>
       <Head>
         <title>
-          {info.name} ({info.symbol.toUpperCase()}) Market Data
+          {info.name} ({info.symbol.toUpperCase()}) Market Data | CoinStack
         </title>
         <meta
           name="description"
           content={`${info.name} price, volume, market cap, chart and information.`}
         />
-        <link rel="icon" href="/favicon.ico" />
+        <link rel="icon" href="/stack.svg" />
       </Head>
       <Header />
       <div className={styles["coin-container"]}>
         <div className={styles["grid-item-1"]}>
+          <LinksTab info={info} />
+        </div>
+
+        <div className={styles["grid-item-2"]}>
+          <CoinInfoTab info={info} />
+        </div>
+        <div className={styles["grid-item-3"]}>
           <div className={styles["timeinterval-buttons-container"]}>
             <button
               onClick={() => {
@@ -167,12 +174,6 @@ const CoinPage: NextPage<IProps> = ({ info, marketData }) => {
             </button>
           </div>
           <LineChart chartData={prices[chosenTimeInterval]} />
-        </div>
-        <div className={styles["grid-item-2"]}>
-          <CoinInfoTab info={info} />
-        </div>
-        <div className={styles["grid-item-3"]}>
-          <LinksTab info={info}/>
         </div>
       </div>
       <Footer />
