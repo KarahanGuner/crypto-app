@@ -9,7 +9,7 @@ const Header: React.FC = () => {
         <a href="/">Home</a>
       </div>
       <div className={styles["header__icon-container"]}>
-        <img src="/icons/stackandname.svg" alt="logo" />
+        <a href="/"><img src="/icons/stackandname.svg" alt="logo" /></a>
       </div>
       <div className={styles.header__search}>
         <SearchFilter />
