@@ -28,8 +28,8 @@ const SearchFilter: React.FC = () => {
             {searchTerm ?
                 <div className={styles["results"]}>
                     {coins.filter(entry => entry.name.toLowerCase().includes(searchTerm.toLowerCase())).map((coin, index) => (
-                        <a href={`/coins/${coin.id}`}>
-                            <div key={index}>
+                        <a href={`/coins/${coin.id}`} key={index}>
+                            <div>
                                 <img src={`https://assets.coingecko.com/coins/images${coin.image}`} alt={coin.name} className={styles["results__coin-icon"]}/> 
                                 &nbsp;
                                 {coin.name}
